@@ -1,23 +1,28 @@
 from rest_framework import serializers
 from django.db import models
 
-# Create your models here. 
-class Contact(models.Model):
+
+#User model
+
+class User(models.Model):
+    username = models.CharField(max_length=50)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
+    password = models.CharField(max_length=15)
     
 
-class ContactSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Contact
+        model = User
         exclude = ()
-        
-        
-        
+
+
+
 #Step model
 
 class Step(models.Model):
-    step_text = models.CharField(max_length=50)
+    step_text = models.CharField(max_length=500)
+    #recipe = models.ForeignKey("Recipe", on_delete=models.CASCADE, default="dinner")
    
 
 class StepSerializer(serializers.ModelSerializer):
@@ -26,11 +31,30 @@ class StepSerializer(serializers.ModelSerializer):
         exclude = ()
 
 
+#Recipe model 
+
+class Recipe(models.Model):
+    name = models.CharField(max_length=500)
+    #user = models.ForeignKey("User", on_delete=models.SET_NULL, blank=True, null=True,)
+    #Step= models.ForeignKey(Step, on_delete=models.CASCADE)
+    #ingredient= models.ForeignKey("Ingredient", on_delete=models.CASCADE)
+
+    
+
+class RecipeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Recipe
+        exclude = ()        
+
+
+
+
+
 
 #Ingredient model
 
 class Ingredient(models.Model):
-    text = models.CharField(max_length=50)
+    text = models.CharField(max_length=500)
     
     
 
@@ -41,14 +65,3 @@ class IngredientSerializer(serializers.ModelSerializer):
 
 
 
-#Recipe model 
-
-class Recipe(models.Model):
-    name = models.CharField(max_length=50)
-    
-    
-
-class RecipeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Recipe
-        exclude = ()

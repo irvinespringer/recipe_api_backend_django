@@ -57,7 +57,7 @@ $ sudo service apache2 restart
 ```
 Now you can login into PHPMyAdmin by going to the your website URL using the port 8081 like this:
 
-https://<your_project>-alesanchezr.c9users.io:8081/phpmyadmin
+https://<your_project>-ispringer.c9users.io:8081/phpmyadmin
 
 
 

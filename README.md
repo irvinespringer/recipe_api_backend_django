@@ -1,5 +1,5 @@
-Receipe API Project
-Technology : Django Framework, RestfulAPIs, SQLite
+Receipe API 
+Technology : Django Framework, RestfulAPIs, SQLite, Python
 
 
 Instructions:
@@ -31,10 +31,4 @@ You need to create the project and add it to your github and Email us your githu
 we can take it from there.
 You get 3 days to finish this test
 
-(Optional): Field validation
-
-
-
-
-End Points:
 
