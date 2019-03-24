@@ -36,7 +36,7 @@ class StepSerializer(serializers.ModelSerializer):
 class Recipe(models.Model):
     name = models.CharField(max_length=500)
     #user = models.ForeignKey("User", on_delete=models.SET_NULL, blank=True, null=True,)
-    #Step= models.ForeignKey(Step, on_delete=models.CASCADE)
+    #step= models.ForeignKey("Step", on_delete=models.CASCADE)
     #ingredient= models.ForeignKey("Ingredient", on_delete=models.CASCADE)
 
     
